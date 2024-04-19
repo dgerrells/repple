@@ -179,7 +179,7 @@ class App extends React.Component {
           <meta name="theme-color" content="#713A4F" />
           <meta
             name="description"
-            content="Repple is a simple app to help track workouts routines."
+            content="Repple is a simple app to help track workout routines."
           />
         </Helmet>
 
