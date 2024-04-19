@@ -58,7 +58,7 @@ const localKey = "local_data";
 class App extends React.Component {
   constructor(props) {
     super(props);
-    const localData = Store.get(localKey) || testData;
+    const localData = Store.get(localKey) || {};
     this.state = {
       workouts: localData.workouts || [],
       completedSets: localData.completedSets || []
