@@ -4,7 +4,7 @@ import { styled } from "@material-ui/styles";
 import ArrowBack from "@material-ui/icons/ArrowBack";
 import Box from "@material-ui/core/Box";
 import { BackButton, AppBar, Page } from "../styles";
-import { HOME, START_WORKOUT, START_WORKOUT_WEIGHT } from "../Routes";
+import { HOME, START_WORKOUT } from "../Routes";
 const Value = styled(Paper)({
   height: "100%"
 });
@@ -74,7 +74,7 @@ class SelectRepsPage extends React.Component {
             <BackButton
               color="inherit"
               aria-label="Back"
-              onClick={() => history.push(START_WORKOUT_WEIGHT)}
+              onClick={() => history.push(`${START_WORKOUT}/${workout.name}`)}
             >
               <ArrowBack />
             </BackButton>
@@ -85,8 +85,8 @@ class SelectRepsPage extends React.Component {
             </Box>
           </Toolbar>
         </AppBar>
-        <Page m={1}>
-          <Grid container justify="center" alignItems="stretch" spacing={2}>
+        <Page p={1}>
+          <Grid container justify="center" alignItems="stretch" spacing={1}>
             {values.map((v) => (
               <Grid key={v} item xs={6}>
                 <Value elevation={2} onClick={() => this.onCompleteSet(v + 1)}>
@@ -104,7 +104,7 @@ class SelectRepsPage extends React.Component {
             ))}
           </Grid>
         </Page>
-        <BottomActions>
+        {/* <BottomActions>
           <BottomAction
             variant="contained"
             color="primary"
@@ -127,6 +127,15 @@ class SelectRepsPage extends React.Component {
             ml="1rem"
           >
             Step x 5
+          </BottomAction>
+        </BottomActions> */}
+        <BottomActions>
+          <BottomAction
+            variant="contained"
+            color="primary"
+            onClick={() => this.onCompleteSet(1)}
+          >
+            Skip
           </BottomAction>
         </BottomActions>
       </>

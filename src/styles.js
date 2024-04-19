@@ -12,6 +12,11 @@ export const BackButton = styled(IconButton)({
   marginRight: 16
 });
 
+export const RightButton = styled(IconButton)({
+  marginLeft: -8,
+  marginRight: 16
+});
+
 export const AppBar = styled(AppBarHeader)({
   position: 'sticky',
   top: 0
@@ -32,7 +37,8 @@ export const TextStatHighlight = ({ children, p = 1, size = 'h5' }) => {
 };
 
 export const Page = styled(Box)({
-  maxWidth: '768px',
+  maxWidth: '468px',
   marginLeft: 'auto',
-  marginRight: 'auto'
+  marginRight: 'auto',
+  minHeight: '100vh',
 });

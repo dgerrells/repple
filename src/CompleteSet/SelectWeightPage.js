@@ -84,7 +84,7 @@ class SelectWeightPage extends React.Component {
             </Box>
           </Toolbar>
         </AppBar>
-        <Page m={1}>
+        <Page p={1}>
           <Grid container justify="center" alignItems="stretch" spacing={1}>
             {values.map(v => (
               <Grid key={v} item xs={6}>
@@ -98,7 +98,7 @@ class SelectWeightPage extends React.Component {
                     <Box fontSize={48} component="span">
                       {(v + 1) * valMult}
                     </Box>
-                    <Box pl={2} fontSize={22} component="span">
+                    <Box pl={1} fontSize={22} component="span">
                       lbs
                     </Box>
                   </Box>

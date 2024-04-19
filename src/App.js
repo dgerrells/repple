@@ -1,5 +1,5 @@
 import React from "react";
-import { HashRouter as Router, Route, Link } from "react-router-dom";
+import { HashRouter as Router, Route } from "react-router-dom";
 import Store from "store";
 import {
   AppBar,
@@ -17,7 +17,8 @@ import SelectRepsPage from "CompleteSet/SelectRepsPage";
 import SelectWeightPage from "CompleteSet/SelectWeightPage";
 import SelectWorkoutPage from "CompleteSet/SelectWorkoutPage";
 import CompletedSetList from "CompletedSetList";
-import { HeaderText } from "./styles";
+import { HeaderText, RightButton } from "./styles";
+import BarChart from '@material-ui/icons/BarChart';
 import StatsPage from "./StatsPage";
 import {
   HOME,
@@ -27,7 +28,7 @@ import {
   START_WORKOUT_WEIGHT,
   CREATE_WORKOUT
 } from "./Routes";
-import testData from './testData';
+// import testData from './testData';
 
 const StartSetButton = styled(Button)({
   width: "auto",
@@ -127,9 +128,16 @@ class App extends React.Component {
             <HeaderText variant="h6" color="inherit">
               Repple Tracker
             </HeaderText>
+            <RightButton
+              color="inherit"
+              aria-label="stats"
+              onClick={() => history.push(STATS)}
+            >
+              <BarChart />
+            </RightButton>
           </Toolbar>
         </AppBar>
-        <Box m={1}>
+        <Box m={[1, 'auto']} maxWidth="568px">
           {
             <CompletedSetList
               history={history}

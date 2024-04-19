@@ -59,7 +59,7 @@ class NewWorkoutPage extends React.Component {
             </Box>
           </Toolbar>
         </AppBar>
-        <Box m={1} textAlign="center">
+        <Box mx={[1, 'auto']} my={[1, '0.5rem']} textAlign="center" maxWidth="400px">
           <TextField
             required
             id="outlined-required"
@@ -78,7 +78,7 @@ class NewWorkoutPage extends React.Component {
             onClick={this.onAddWorkout}
             disabled={!workoutName.trim()}
           >
-            Add workout
+            Save
           </Button>
         </Box>
       </>

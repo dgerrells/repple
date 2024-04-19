@@ -24,7 +24,7 @@ const SearchInput = styled(InputBase)({
   paddingLeft: '1rem',
   color: 'white',
   borderRadius: '6px',
-  width: '100%'
+  width: '100%',
 });
 const WorkoutName = styled(Box)({
   textTransform: 'capitalize'
@@ -71,10 +71,10 @@ class SelectWorkoutPage extends React.Component {
             </Box>
           </Toolbar>
         </AppBar>
-        <Page m={1}>
+        <Page p={1}>
           {workouts.length === 0 && (
             <WorkoutName p={2} m={1} textAlign="center" fontFamily="Monospace">
-              No workouts
+              No workouts. Tab below to add one.
             </WorkoutName>
           )}
           {workouts
@@ -113,7 +113,7 @@ class SelectWorkoutPage extends React.Component {
             variant="contained"
             onClick={() => history.push(CREATE_WORKOUT)}
           >
-            New Workout
+            Add Workout
           </NewWorkoutButton>
         </Box>
       </>

@@ -1,6 +1,5 @@
 import React from 'react';
 import { Typography, Card, CardContent } from '@material-ui/core';
-import { styled } from '@material-ui/styles';
 import { format as timeAgo } from 'timeago.js';
 import Box from '@material-ui/core/Box';
 import { TextStatHighlight } from 'styles';

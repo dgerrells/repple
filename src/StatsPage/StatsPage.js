@@ -1,15 +1,10 @@
 import React from 'react';
 import {
   Toolbar,
-  Paper,
   Typography,
-  Card,
-  CardContent
 } from '@material-ui/core';
-import { styled } from '@material-ui/styles';
 import ArrowBack from '@material-ui/icons/ArrowBack';
 import Box from '@material-ui/core/Box';
-import { Doughnut } from 'react-chartjs-2';
 import FavoriteWorkout from './FavoriteWorkout';
 import { BackButton, AppBar, Page } from '../styles';
 import TotalStats from './TotalStats';
@@ -19,7 +14,7 @@ import WeekdayStats from './WeekdayStats';
 class StatsPage extends React.Component {
   state = {};
   componentDidMount() {
-    const { completedSets, workouts } = this.props;
+    const { completedSets } = this.props;
 
     const setMap = {};
     completedSets.forEach(set => {
