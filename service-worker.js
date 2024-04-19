@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/repple/precache-manifest.f5ee3d788ea5e967f106a9200c2458a6.js"
+  "*dgerrells.github.io/repple*/precache-manifest.37673654da9d31561300c012d42c43f6.js"
 );
 
 workbox.clientsClaim();
@@ -28,7 +28,7 @@ self.__precacheManifest = [].concat(self.__precacheManifest || []);
 workbox.precaching.suppressWarnings();
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
 
-workbox.routing.registerNavigationRoute("/repple/index.html", {
+workbox.routing.registerNavigationRoute("*dgerrells.github.io/repple*/index.html", {
   
   blacklist: [/^\/_/,/\/[^/]+\.[^/]+$/],
 });
