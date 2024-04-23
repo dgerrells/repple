@@ -1,10 +1,10 @@
-import React from 'react';
-import { Pie } from 'react-chartjs-2';
-import { Typography, Card, CardContent } from '@material-ui/core';
-import Box from '@material-ui/core/Box';
-import blueGrey from '@material-ui/core/colors/blueGrey';
-import { getWeekdayStats } from './StatsUtils';
-import { TextStatHighlight } from 'styles';
+import React from "react";
+import { Pie } from "react-chartjs-2";
+import { Typography, Card, CardContent } from "@material-ui/core";
+import Box from "@material-ui/core/Box";
+import blueGrey from "@material-ui/core/colors/blueGrey";
+import { getWeekdayStats } from "./StatsUtils";
+import { TextStatHighlight } from "styles";
 
 class TotalStats extends React.Component {
   state = {};
@@ -26,19 +26,15 @@ class TotalStats extends React.Component {
       },
       options: {
         legend: {
-          position: 'left'
+          position: "left"
         }
       }
     });
   };
 
   render() {
-    const {
-      weekdayChartData,
-      options,
-      favDayOfWeek,
-      leastFavDayOfWeek
-    } = this.state;
+    const { weekdayChartData, options, favDayOfWeek, leastFavDayOfWeek } =
+      this.state;
     if (!weekdayChartData) {
       return null;
     }
@@ -47,9 +43,9 @@ class TotalStats extends React.Component {
         <Card>
           <CardContent>
             <Typography color="textSecondary">
-              You workout most often on a
+              You workout most often on
               <TextStatHighlight>{favDayOfWeek}</TextStatHighlight>
-              and least often on a
+              and least often on
               <TextStatHighlight>{leastFavDayOfWeek}</TextStatHighlight>
             </Typography>
             <Typography color="textSecondary" />
