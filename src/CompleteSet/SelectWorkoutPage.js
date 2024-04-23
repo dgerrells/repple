@@ -1,39 +1,39 @@
-import React from 'react';
-import { Toolbar, Button, Paper } from '@material-ui/core';
-import Store from 'store';
-import { styled } from '@material-ui/styles';
-import ArrowBack from '@material-ui/icons/ArrowBack';
-import Box from '@material-ui/core/Box';
-import InputBase from '@material-ui/core/InputBase';
-import { BackButton, AppBar, Page } from 'styles';
-import { HOME, START_WORKOUT, CREATE_WORKOUT } from 'Routes';
+import React from "react";
+import { Toolbar, Button, Paper } from "@material-ui/core";
+import Store from "store";
+import { styled } from "@material-ui/styles";
+import ArrowBack from "@material-ui/icons/ArrowBack";
+import Box from "@material-ui/core/Box";
+import InputBase from "@material-ui/core/InputBase";
+import { BackButton, AppBar, Page } from "styles";
+import { HOME, START_WORKOUT, CREATE_WORKOUT } from "Routes";
 
 const NewWorkoutButton = styled(Button)({
-  width: 'auto',
-  marginLeft: 'auto',
-  marginRight: 'auto',
-  paddingLeft: '1rem',
-  paddingRight: '1rem',
-  borderRadius: '1rem',
+  width: "auto",
+  marginLeft: "auto",
+  marginRight: "auto",
+  paddingLeft: "1rem",
+  paddingRight: "1rem",
+  borderRadius: "1rem",
   zIndex: 200
 });
 
 const SearchInput = styled(InputBase)({
-  background: 'rgba(255, 255, 255, 0.15)',
-  paddingRight: '1rem',
-  paddingLeft: '1rem',
-  color: 'white',
-  borderRadius: '6px',
-  width: '100%',
+  background: "rgba(255, 255, 255, 0.15)",
+  paddingRight: "1rem",
+  paddingLeft: "1rem",
+  color: "white",
+  borderRadius: "6px",
+  width: "100%"
 });
 const WorkoutName = styled(Box)({
-  textTransform: 'capitalize'
+  textTransform: "capitalize"
 });
 
 class SelectWorkoutPage extends React.Component {
-  pageStateKey = 'StartSetPage';
+  pageStateKey = "StartSetPage";
   state = {
-    filter: ''
+    filter: ""
   };
 
   componentDidMount() {
@@ -41,7 +41,7 @@ class SelectWorkoutPage extends React.Component {
     this.setState(localPageState);
   }
 
-  onChangeFilter = event => {
+  onChangeFilter = (event) => {
     this.setState({ filter: event.target.value }, () =>
       Store.set(this.pageStateKey, this.state)
     );
@@ -73,21 +73,32 @@ class SelectWorkoutPage extends React.Component {
         </AppBar>
         <Page p={1}>
           {workouts.length === 0 && (
-            <WorkoutName p={2} m={1} textAlign="center" fontFamily="Monospace">
-              No workouts. Tab below to add one.
+            <WorkoutName
+              p={2}
+              m={1}
+              pt={20}
+              fontSize={20}
+              textAlign="center"
+              fontWeight="bold"
+              fontFamily="Monospace"
+              color="#713A4F"
+            >
+              No workouts found.
+              <br />
+              Tap below to add one.
             </WorkoutName>
           )}
           {workouts
-            .filter(workout => {
+            .filter((workout) => {
               return (
                 !filter ||
                 workout.name.toLowerCase().indexOf(filter.toLowerCase()) > -1
               );
             })
             .sort((a, b) => a.name.localeCompare(b.name))
-            .map(workout => (
+            .map((workout) => (
               <Paper elevation={2} key={workout.name}>
-              <WorkoutName
+                <WorkoutName
                   p={2}
                   m={1}
                   textAlign="center"

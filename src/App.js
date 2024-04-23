@@ -18,7 +18,7 @@ import SelectWeightPage from "CompleteSet/SelectWeightPage";
 import SelectWorkoutPage from "CompleteSet/SelectWorkoutPage";
 import CompletedSetList from "CompletedSetList";
 import { HeaderText, RightButton } from "./styles";
-import BarChart from '@material-ui/icons/BarChart';
+import BarChart from "@material-ui/icons/BarChart";
 import StatsPage from "./StatsPage";
 import {
   HOME,
@@ -28,7 +28,7 @@ import {
   START_WORKOUT_WEIGHT,
   CREATE_WORKOUT
 } from "./Routes";
-// import testData from './testData';
+import testData from "./testData";
 
 const StartSetButton = styled(Button)({
   width: "auto",
@@ -59,7 +59,7 @@ const localKey = "local_data";
 class App extends React.Component {
   constructor(props) {
     super(props);
-    const localData = Store.get(localKey) || {};
+    const localData = Store.get(localKey) || testData;
     this.state = {
       workouts: localData.workouts || [],
       completedSets: localData.completedSets || []
@@ -137,7 +137,7 @@ class App extends React.Component {
             </RightButton>
           </Toolbar>
         </AppBar>
-        <Box m={[1, 'auto']} maxWidth="568px">
+        <Box m={[1, "auto"]} maxWidth="568px">
           {
             <CompletedSetList
               history={history}
