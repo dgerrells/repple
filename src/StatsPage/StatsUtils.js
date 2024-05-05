@@ -12,7 +12,7 @@ export const calcSetMap = sets => {
 
 export const getTotalWeight = sets => {
   return sets.reduce(
-    (sum, set) => sum + Number.parseInt(set.weight, 0) || 0,
+    (sum, set) => sum + Number.parseInt(set.weight * set.value || 1, 0) || 0,
     0
   );
 };
